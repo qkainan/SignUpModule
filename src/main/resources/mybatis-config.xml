@@ -7,6 +7,19 @@
     <!--设置配置文件路径-->
     <properties resource="jdbc.properties"></properties>
 
+    <!--配置别名包-->
+    <typeAliases>
+        <package name="com.qkainan.domain"></package>
+    </typeAliases>
+
+    <plugins>
+        <!-- 注意：分页助手的插件  配置在通用馆mapper之前 -->
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!-- 指定方言 -->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
     <!--设置环境的唯一标识-->
     <environments default="development">
         <environment id="development">
@@ -22,8 +35,13 @@
     </environments>
 
     <mappers>
-        <mapper resource="com/qkainan/dao/OrderDao.xml"/>
         <mapper resource="com/qkainan/dao/UserDao.xml"/>
     </mappers>
 
 </configuration>
+
+
+
+
+
+

@@ -1,16 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: qkainan
-  Date: 2023/3/26
-  Time: 13:51
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>注册成功</title>
+</head>
+<body>
+    <h2>注册成功</h2>
+
+    <button type = "button" onclick = "one()">返回主页</button>
+    <script type="text/javascript">
+        function one(){
+            //location对象跳转
+            location.href = "index.jsp";
+        }
+    </script>
+</body>
 </html>
