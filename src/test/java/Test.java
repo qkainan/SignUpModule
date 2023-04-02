@@ -1,7 +1,4 @@
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.qkainan.dao.UserDao;
-import com.qkainan.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,10 +6,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 public class Test {
     private SqlSession session;

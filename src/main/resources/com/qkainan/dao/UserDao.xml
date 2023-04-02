@@ -10,12 +10,12 @@
     </insert>
 
     <!--查询所有用户-->
-<select id="findAll" resultType="com.qkainan.pojo.User">
+<select id="findAll" resultType="com.qkainan.domain.User">
     select id,username,password,hobby from user;
 </select>
 
 <!--定义User基本属性映射规则-->
-<resultMap id="userMap" type="com.qkainan.pojo.User">
+<resultMap id="userMap" type="com.qkainan.domain.User">
     <id property="id" column="id"></id>
     <result property="username" column="username"></result>
     <result property="password" column="password"></result>

@@ -1,7 +1,7 @@
 package com.qkainan.servlet;
 
 import com.qkainan.dao.UserDao;
-import com.qkainan.pojo.User;
+import com.qkainan.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 
 @WebServlet("/userServlet")
 public class UserServlet extends HttpServlet {

@@ -1,4 +1,4 @@
-package com.qkainan.pojo;
+package com.qkainan.domain;
 
 public class User {
 
