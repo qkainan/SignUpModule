@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface UserDao {
+
     //查询所有用户
     List<User> findAll();
 
@@ -18,4 +19,5 @@ public interface UserDao {
 
     //注册时添加用户
     void insert(@Param("username") String username,@Param("password")String password,@Param("hobby")String hobby) throws IOException;
+    
 }

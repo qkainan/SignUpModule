@@ -26,7 +26,7 @@
     <!--select属性：指定用哪个查询来查询当前属性的数据 写法：包名.接口名.方法名
            column属性：设置当前结果集中哪列的数据作为select属性指定的查询方法需要参数-->
 <select id="findById" resultMap="userMap" >
-
+    select id,username,password,hobby from user where id = #{id}
 </select>
 
 
