@@ -3,8 +3,20 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-						http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+                            http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         id="WebApp_ID" version="4.0">
+
+
+    <!--配置spring的配置文件路径-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <!--配置监听器，可以再应用被部署的时候创建spring容器-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 
     <servlet>
         <servlet-name>DispatcherServlet</servlet-name>
@@ -51,16 +63,5 @@
         <!-- 所有请求都设置utf-8的编码 -->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-
-    <!--配置spring的配置文件路径-->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml</param-value>
-    </context-param>
-    <!--配置监听器，可以再应用被部署的时候创建spring容器-->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
 </web-app>
