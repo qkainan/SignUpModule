@@ -5,9 +5,19 @@
 
 <mapper namespace="com.qkainan.dao.UserDao">
     <!--注册时添加数据-->
-    <insert id="insert">
+    <insert id="insertUser">
         insert into user (username, password, hobby) values (#{username}, #{password}, #{hobby});
     </insert>
+
+    <!--后台删除用户-->
+    <delete id="deleteUser">
+        delete from user where id = #{id}
+    </delete>
+
+    <!--后台更新用户数据-->
+     <update id="updateUser">
+        update user set username = #{username},password = #{password},hobby = #{hobby} where id = #{id}
+    </update>
 
     <!--查询所有用户-->
 <select id="findAll" resultType="com.qkainan.domain.User">
@@ -27,12 +37,6 @@
            column属性：设置当前结果集中哪列的数据作为select属性指定的查询方法需要参数-->
 <select id="findById" resultMap="userMap" >
     select id,username,password,hobby from user where id = #{id}
-</select>
-
-
-<!--根据用户名查询用户-->
-<select id="findByUsername" resultMap="userMap">
-    select id,username,password,hobby from user where username = #{username}
 </select>
 
 </mapper>

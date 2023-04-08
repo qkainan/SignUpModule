@@ -1,4 +1,5 @@
 import com.qkainan.dao.UserDao;
+import com.qkainan.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -28,7 +29,8 @@ public class Test {
     public void testUserDao() throws IOException {
         //获取UserDao实现类对象(Mapper)
         UserDao userDao = session.getMapper(UserDao.class);
-        userDao.insert("hy", "6666666", "男装");
+//        User user = new User(22222,"hy", "6666666", "男装");
+//        userDao.insertUser(user);
     }
 
     /*@org.junit.Test
