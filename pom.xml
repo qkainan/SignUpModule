@@ -50,7 +50,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!--Spring-context-->
+    <!--SpringIOC相关依赖-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>

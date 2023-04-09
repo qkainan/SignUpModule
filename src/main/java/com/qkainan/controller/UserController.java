@@ -15,7 +15,7 @@ import java.util.List;
 @RestController//This is equivalent to @Controller and @ResponseBody integrated
 public class UserController {
 
-    @Autowired(required = false)
+    @Autowired
     private UserService userService;
 
     @GetMapping("/user/{id}")

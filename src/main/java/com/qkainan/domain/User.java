@@ -3,8 +3,9 @@ package com.qkainan.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
-
+@Component
 @Data //根据属性生成set，get方法
 @NoArgsConstructor //生成空参构造
 @AllArgsConstructor //生成全参构造
