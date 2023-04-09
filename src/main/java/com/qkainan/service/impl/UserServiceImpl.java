@@ -6,13 +6,14 @@ import com.qkainan.common.PageResult;
 import com.qkainan.dao.UserDao;
 import com.qkainan.domain.User;
 import com.qkainan.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
-@Service()
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -34,8 +35,8 @@ public class UserServiceImpl implements UserService {
         return pageResult;
     }
 
-    public void insertUser(User user) throws IOException {
-        userDao.insertUser(user);
+    public void insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException {
+        userDao.insertUser(username, password, hobby);
     }
 
     public void deleteUser(Integer id) {

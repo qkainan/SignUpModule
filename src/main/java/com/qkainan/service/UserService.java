@@ -14,7 +14,7 @@ public interface UserService {
 
     PageResult findByPage(Integer pageSize, Integer pageNum);
 
-    void insertUser(User user) throws IOException;
+    void insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException;
 
     void deleteUser(Integer id);
 

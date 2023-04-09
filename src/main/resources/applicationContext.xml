@@ -10,8 +10,8 @@
        classs:配置类的全类名
        id:配置一个唯一标识
    -->
-    <bean class="com.qkainan.service.impl.UserServiceImpl" id="UserService"  >
-    </bean>
+<!--    <bean class="com.qkainan.service.impl.UserServiceImpl" id="UserService"  >-->
+<!--    </bean>-->
 
 
     <!--组件扫描，排除controller-->

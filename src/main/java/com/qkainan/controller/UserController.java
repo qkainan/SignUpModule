@@ -5,6 +5,7 @@ import com.qkainan.common.ResponseResult;
 import com.qkainan.domain.User;
 
 import com.qkainan.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,8 +41,8 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseResult insertUser(@RequestBody User user) throws IOException {
-        userService.insertUser(user);
+    public ResponseResult insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException {
+        userService.insertUser(username, password, hobby);
         return new ResponseResult(200,"操作成功");
     }
 
