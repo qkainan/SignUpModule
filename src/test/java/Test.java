@@ -1,14 +1,31 @@
 import com.qkainan.dao.UserDao;
 import com.qkainan.domain.User;
+import com.qkainan.service.impl.UserServiceImpl;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.MessageSourceResolvable;
+import org.springframework.context.NoSuchMessageException;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.ResolvableType;
+import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.annotation.Annotation;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class Test {
     private SqlSession session;
@@ -54,4 +71,16 @@ public class Test {
         session.commit();
         session.close();
     }
+
+    public static void main(String[] args) {
+
+        //create a container
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext,xml") ;
+        //Fetch object
+        UserServiceImpl userService = (UserServiceImpl) applicationContext.getBean("UserService");
+
+
+    }
+
+
 }

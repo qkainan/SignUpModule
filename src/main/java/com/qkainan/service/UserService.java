@@ -2,6 +2,7 @@ package com.qkainan.service;
 
 import com.qkainan.common.PageResult;
 import com.qkainan.domain.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,15 +1,17 @@
 package com.qkainan.dao;
 
 import com.qkainan.domain.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.io.IOException;
 import java.util.List;
-
+@Mapper
 public interface UserDao {
 
     //查询所有用户
     List<User> findAll();
+
 
     //根据id查询用户，
     User findById(Integer id);
