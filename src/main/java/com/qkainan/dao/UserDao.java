@@ -17,7 +17,9 @@ public interface UserDao {
     User findById(Integer id);
 
     //注册时添加用户
-    void insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException;
+    void insertUser(User user) throws IOException;
+
+//    void insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException;
 
     void deleteUser(Integer id);
 

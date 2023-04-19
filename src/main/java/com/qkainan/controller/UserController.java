@@ -1,5 +1,6 @@
 package com.qkainan.controller;
 
+import com.qkainan.aspect.InvokeLog;
 import com.qkainan.common.PageResult;
 import com.qkainan.common.ResponseResult;
 import com.qkainan.domain.User;
@@ -41,10 +42,18 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseResult insertUser(@Param("username")String username, @Param("password")String password, @Param("hobby")String hobby) throws IOException {
-        userService.insertUser(username, password, hobby);
-        return new ResponseResult(200,"操作成功");
+    @InvokeLog
+    public ResponseResult insertUser(User user) throws IOException {
+        userService.insertUser(user);
+        return new ResponseResult(200, "Successful operation");
     }
+
+//    @PostMapping("/register")
+//    @InvokeLog
+//    public ResponseResult insertUser(@RequestParam("username")String username, @RequestParam("password")String password, @RequestParam("hobby")String hobby) throws IOException {
+//        userService.insertUser(username, password, hobby);
+//        return new ResponseResult(200, "Successful operation");
+//    }
 
     @DeleteMapping("/user/delete/{id}")
     public ResponseResult deleteUser(@PathVariable("id") Integer id){
