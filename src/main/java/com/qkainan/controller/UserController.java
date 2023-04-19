@@ -45,8 +45,15 @@ public class UserController {
     @InvokeLog
     public ResponseResult insertUser(User user) throws IOException {
         userService.insertUser(user);
+        pageJumpToSuccess();
         return new ResponseResult(200, "Successful operation");
     }
+
+    @RequestMapping("/pageJumpToSuccess")
+    private String pageJumpToSuccess(){
+        return "redirect:/success.jsp";
+    }
+
 
 //    @PostMapping("/register")
 //    @InvokeLog
