@@ -1,14 +1,13 @@
 package com.qkainan.controller;
 
 import com.qkainan.aspect.InvokeLog;
-import com.qkainan.common.PageResult;
 import com.qkainan.common.ResponseResult;
 import com.qkainan.domain.User;
 
 import com.qkainan.service.UserService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,6 +17,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+
+    @PostMapping("/register")
+    @InvokeLog
+    public ResponseResult insertUser(User user) throws IOException {
+        userService.insertUser(user);
+
+        return new ResponseResult(200, "Successful operation");
+    }
+
 
     @GetMapping("/user/{id}")
     public ResponseResult findById(@PathVariable Integer id) {
@@ -37,22 +46,16 @@ public class UserController {
 
     @GetMapping("/user/{pageSize}/{pageNum}")
     public ResponseResult findByResult(@PathVariable("pageSize") Integer pageSize, @PathVariable("pageNum") Integer pageNum) {
-        PageResult pageResult = userService.findByPage(pageSize, pageNum);
+
         return new ResponseResult(200, "Successful operation");
     }
 
-    @PostMapping("/register")
-    @InvokeLog
-    public ResponseResult insertUser(User user) throws IOException {
-        userService.insertUser(user);
-        pageJumpToSuccess();
-        return new ResponseResult(200, "Successful operation");
-    }
 
-    @RequestMapping("/pageJumpToSuccess")
-    private String pageJumpToSuccess(){
-        return "redirect:/success.jsp";
-    }
+//    //bug 返回值被放入了响应体中，所以无法实现页面跳转
+//    @RequestMapping("/pageJumpToSuccess")
+//    private String pageJumpToSuccess(){
+//        return "redirect:/success.jsp";
+//    }
 
 
 //    @PostMapping("/register")

@@ -11,13 +11,13 @@
     <typeAliases>
         <package name="com.qkainan.domain"></package>
     </typeAliases>
-    <plugins>
-        <!-- 注意：分页助手的插件，配置在通用mapper之前 -->
-        <plugin interceptor="com.github.pagehelper.PageHelper">
-            <!-- 指定方言 -->
-            <property name="dialect" value="mysql"/>
-        </plugin>
-    </plugins>
+<!--    <plugins>-->
+<!--        &lt;!&ndash; 注意：分页助手的插件，配置在通用mapper之前 &ndash;&gt;-->
+<!--        <plugin interceptor="com.github.pagehelper.PageHelper">-->
+<!--            &lt;!&ndash; 指定方言 &ndash;&gt;-->
+<!--            <property name="dialect" value="mysql"/>-->
+<!--        </plugin>-->
+<!--    </plugins>-->
 
 </configuration>
 

@@ -6,7 +6,6 @@
                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         id="WebApp_ID" version="4.0">
 
-
     <!--配置spring的配置文件路径-->
     <context-param>
         <param-name>contextConfigLocation</param-name>

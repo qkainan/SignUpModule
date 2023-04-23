@@ -12,6 +12,14 @@
     }
 </script>
 
+<button type = "button" onclick = "one()">登录</button>
+<script type="text/javascript">
+    function one(){
+        //location对象跳转
+        location.href = "html/login.html";
+    }
+</script>
+
 
 </body>
 </html>

@@ -3,10 +3,12 @@ package com.qkainan.dao;
 import com.qkainan.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
 
 import java.io.IOException;
 import java.util.List;
-@Mapper
+@Repository
 public interface UserDao {
 
     //查询所有用户

@@ -8,6 +8,8 @@
          SpringMVC只扫描controller包即可
      -->
     <context:component-scan base-package="com.qkainan.controller"/>
+    <!--引入外部的配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
     <!-- 解决静态资源访问问题，如果不加mvc:annotation-driven会导致无法访问handler-->
     <mvc:default-servlet-handler/>
     <!--解决响应乱码-->
@@ -20,28 +22,29 @@
     </mvc:annotation-driven>
 
 
-    <!--配置视图解析器  前后端不分离项目使用-->
-    <!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+    <!--配置视图解析器  前后端不分离项目使用
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
             &lt;!&ndash;要求拼接的前缀&ndash;&gt;
-            <property name="prefix" value="/WEB-INF/page/"></property>
+            <property name="prefix" value="/WEB-INF/page"></property>
             &lt;!&ndash;要拼接的后缀&ndash;&gt;
             <property name="suffix" value=".jsp"></property>
         </bean>-->
 
 
     <!--配置拦截器-->
-<!--    <mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--要拦截的路径-->
+            <mvc:mapping path="/**"/>
+            <!--排除不拦截的路径-->
+            <mvc:exclude-mapping path="/html/**"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/register"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/login"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/index.jsp"></mvc:exclude-mapping>
+            <bean class="com.qkainan.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
-<!--        <mvc:interceptor>-->
-<!--            &lt;!&ndash;-->
-<!--            &ndash;&gt;-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            &lt;!&ndash;配置排除拦截的路径&ndash;&gt;-->
-<!--            &lt;!&ndash;<mvc:exclude-mapping path="/"/>&ndash;&gt;-->
-<!--            &lt;!&ndash;配置拦截器对象注入容器&ndash;&gt;-->
-<!--            <bean class="com.qkainan.interceptor.QKNHandlerInterceptor"></bean>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
 
     <!--
           文件上传解析器

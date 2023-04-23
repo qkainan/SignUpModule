@@ -11,46 +11,22 @@
 
   <dependencies>
 
-    <!--日志依赖-->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
-    </dependency>
-    <!--mybatis依赖-->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>3.5.4</version>
-    </dependency>
-    <!--分页查询依赖-->
-    <dependency>
-      <groupId>com.github.pagehelper</groupId>
-      <artifactId>pagehelper</artifactId>
-      <version>5.3.2</version>
-    </dependency>
     <!--mysql驱动-->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.32</version>
     </dependency>
-    <!--servlet依赖-->
+    <!--lombok-->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.1.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <!--添加jsp的jar包的坐标-->
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>javax.servlet.jsp-api</artifactId>
-      <version>2.3.0</version>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
       <scope>provided</scope>
     </dependency>
 
-    <!--SpringIOC相关依赖-->
+    <!--spring依赖-->
+    <!--Spring-context-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -74,6 +50,18 @@
       <artifactId>mybatis-spring</artifactId>
       <version>2.0.4</version>
     </dependency>
+    <!--mybatis依赖-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.4</version>
+    </dependency>
+    <!--log4j依赖，打印mybatis日志-->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
 
     <!-- druid数据源 -->
     <dependency>
@@ -94,15 +82,22 @@
       <artifactId>spring-test</artifactId>
       <version>5.1.9.RELEASE</version>
     </dependency>
-    <!--lombok依赖-->
+
+
+    <!-- servlet依赖 -->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.12</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
-
-
+    <!--jsp依赖 -->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.1</version>
+      <scope>provided</scope>
+    </dependency>
     <!--springmvc的依赖-->
     <dependency>
       <groupId>org.springframework</groupId>
